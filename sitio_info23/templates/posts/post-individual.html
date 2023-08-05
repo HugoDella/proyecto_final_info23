@@ -1,0 +1,51 @@
+{% extends 'base.html' %}
+{% load static %}
+{% load colaborador_tags %}
+
+{% block contenido %}
+
+
+<center>
+<div class=" container-fluid ms-2 me-2" style="margin: 100px;">
+    {% if posts.imagen %}
+    <img src="{{ posts.imagen.url }}" alt="">
+    {% else %}
+    <p>No hay imagen disponible</p>
+    {% endif %}
+    <table><h1>{{posts.titulo}}</h1></table>
+    <table><h2>{{posts.subtitulo}}</h2></table>
+    <div class="container">
+        <div class="row">
+            <div class="col-12 bg-info ms-1 me-1"><table><h3>{{posts.categoria}}</h3></table></div>
+        </div>
+
+    <br>
+    <table><p>{{posts.texto}}</p></table>
+
+    {% if user.is_superuser or request.user|has_group:"Colaborador" %}
+    <div class=" container-fluid" style="margin: 50px;">
+    <a id="boton_post" href="{% url 'apps.posts:post_update' pk=posts.id %}"><h3>Modificar post</h3></a>
+    </div>
+    <div class="container-fluid" style="margin-top: 50px;">
+    <a id="boton_post" href="{% url 'apps.posts:post_delete' pk=posts.pk %}"><h3>Eliminar post</h3></a>
+    </div>
+
+    {% endif %}
+
+
+
+
+</div>
+
+
+<div class="container-fluid me-1">
+
+    
+
+{% include 'comentario/crear_comentario.html' %}
+
+    
+{% endblock %}
+
+
+  

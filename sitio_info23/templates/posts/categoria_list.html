@@ -1,0 +1,28 @@
+{% extends 'base.html'%}
+
+{% block contenido %}
+
+<center>
+    <center>
+        <div class="container-fluid" style="margin-bottom: 50px;;">
+            <div class="row">
+                <div class="col-12 bg-info ms-5 me-5"><h1>CATEGORIAS</h1></div>
+            </div>
+        </div>
+    </center>
+    
+<div class="container-fluid" style="margin: 50px; margin-right: 50px;">
+    <h1>Lista de Categorias</h1>
+    <br>
+    <ul>
+        {% for categoria in categorias %}
+            <table><h3> {{categoria.nombre}} </h3> 
+             <a style="color:black;" 
+            href="{% url 'apps.posts:categoria_delete' pk=categoria.pk %}">Eliminar</a></table>
+        {% empty %}
+            <li>No hay Categorias</li>
+        {% endfor %}
+    </ul>
+</div>    
+</center>
+{% endblock %}

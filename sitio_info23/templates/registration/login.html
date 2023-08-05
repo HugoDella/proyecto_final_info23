@@ -1,0 +1,48 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block contenido %}
+<center>
+
+    <form method="POST" style="margin-top: 50px; ">
+        <center>
+            <div class="container">
+                <div class="row">
+                    <div class="col-12 bg-info ms-5 me-5" style="color: white"><h2> Iniciar Sesion</h2> </div>
+                </div>
+            </div>
+            </center>
+            
+        <!-- <h1 class="h2 bg-info p-2 "  >Iniciar sesion</h1>
+        <br> -->
+        <div class="messages">
+            {% for message in messages %}
+                <table {% if message.tag %} class="{{ message.tag}}" {% endif %}> {{ message }} </table>
+            {%endfor%}
+        </div>
+        <br>
+        {% csrf_token %}
+        <center>
+        <div class=" container">
+            <table> {{ form }} </table>
+            <br>
+            <a  style="color: rgb(7, 38, 243);" href=" {% url 'apps.usuario:registrar' %} ">Todavia no estas registrado? Registrate </a>
+        </center>
+
+        
+            <br><br>
+            <button type="submit" class="btn btn.success btn-lg px-3"> </button>
+            <a href=" {% url 'apps.usuario:password_reset' %} ">Olvidaste tu contraseña? </a>
+            <!-- <a href=" {% url 'apps.usuario:password_reset_done' %} "></a> -->
+        
+                   
+        <!-- </div>
+        <div class=" container">
+            <table> {{ form }} </table> -->
+
+            
+        
+    </form>
+
+</center>
+{% endblock %}
