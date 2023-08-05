@@ -22,7 +22,14 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # SECURITY WARNING: keep the secret key used in production secret!
 SECRET_KEY = 'django-insecure-pp*uhmwkmd534)38_)5yfwta_)q!yx5!#rl*hhh6ni9$-aarr)'
 
-ALLOWED_HOST=[ 'hugodell.pythonanywhere.com/']
+<<<<<<< HEAD
+ALLOWED_HOSTS=[ 'hugodell.pythonanywhere.com/']
+=======
+DEBUG = True
+
+ALLOWED_HOSTS = ['localhost', '127.0.0.1']
+
+>>>>>>> 7a2905beb96e53af80036bc7575dd0278134214c
 
 AUTH_USER_MODEL= 'usuario.Usuario'
 
@@ -84,6 +91,10 @@ WSGI_APPLICATION = 'sitio_info23.wsgi.application'
 
 # Database
 # https://docs.djangoproject.com/en/4.2/ref/settings/#databases
+<<<<<<< HEAD
+=======
+
+>>>>>>> 7a2905beb96e53af80036bc7575dd0278134214c
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
@@ -92,6 +103,11 @@ DATABASES = {
         "PASSWORD": "Hdd35469880",
         'HOST': 'localhost',
         'PORT': 3306,
+<<<<<<< HEAD
+=======
+    }
+}
+>>>>>>> 7a2905beb96e53af80036bc7575dd0278134214c
 
 
 # Password validation
