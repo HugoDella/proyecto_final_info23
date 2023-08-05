@@ -22,9 +22,10 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # SECURITY WARNING: keep the secret key used in production secret!
 SECRET_KEY = 'django-insecure-pp*uhmwkmd534)38_)5yfwta_)q!yx5!#rl*hhh6ni9$-aarr)'
 
-
+ALLOWED_HOST=[ 'hugodell.pythonanywhere.com/']
 
 AUTH_USER_MODEL= 'usuario.Usuario'
+
 
 EMAIL_BACKEND= 'django.core.mail.backends.smtp.EmailBackend'
 EMAIL_HOST= 'smtp.gmail.com'
@@ -83,13 +84,14 @@ WSGI_APPLICATION = 'sitio_info23.wsgi.application'
 
 # Database
 # https://docs.djangoproject.com/en/4.2/ref/settings/#databases
-
-# DATABASES = {
-#     'default': {
-#         'ENGINE': 'django.db.backends.sqlite3',
-#         'NAME': BASE_DIR / 'db.sqlite3',
-#     }
-# }
+DATABASES = {
+    'default': {
+        'ENGINE': 'django.db.backends.mysql',
+        'NAME':'sitio_info23db',
+        "USER": "root",
+        "PASSWORD": "Hdd35469880",
+        'HOST': 'localhost',
+        'PORT': 3306,
 
 
 # Password validation
