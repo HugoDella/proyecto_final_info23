@@ -30,7 +30,7 @@ urlpatterns = [
     path('', include('apps.contacto.urls')),
     path('',include('apps.usuario.urls')),
     path('', include('django.contrib.auth.urls')),
-    path('',About ,name= 'Acerca de nosotros'),
+    path('acerca de nosotros/',About ,name= 'acerca de nosotros'),
     
 
 
