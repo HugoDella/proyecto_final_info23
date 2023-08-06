@@ -16,7 +16,10 @@
 
 </head>
 
+
+
 <body>
+
   <header>
     <center>
       <div class="container">
@@ -37,7 +40,7 @@
       </div>
       <ul class="nav-links">
           <li><a href=" {% url 'index' %}"> Inicio </a></li>
-          <li><a href="#"> Acerca de nosotros</a></li>
+          <li><a href="{% url 'About' %}"> Acerca de nosotros</a></li>
           <li><a href="{% url 'apps.posts:posts' %}"> Posts</a></li>
           <li><a href="{% url 'apps.contacto:contacto' %}"> Contacto</a></li>
           <div class="dropdown">

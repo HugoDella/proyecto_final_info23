@@ -20,12 +20,10 @@ class RegistrarUsuario(CreateView):
     def form_valid(self, form):
         response =  super().form_valid(form)
         messages.success(self.request,'Registro exitoso, por favor inicia sesion')
-        group= Group.objects.get(name='Registrado')
+        group= Group.objects.get(name='Usuario registrado')
         self.object.groups.add(group)
         return redirect('apps.usuario:registrar')
         
-
-        # return redirect('apps.usuario:registrar')
 
 class LoginUsuario(LoginView):
     template_name='registration/login.html'

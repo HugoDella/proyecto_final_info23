@@ -1,6 +1,8 @@
 {% extends 'base.html' %}
 {% block contenido %}
-<div class="container-fluid" style="margin: 300px;" >
+<center>
+
+<div class="container-fluid" style="margin: 30px;" >
     <h1>Eliminar Categoria</h1>
     <p>¿Estas seguro de que quieres eliminar la categoria "{{ object.nombre }}"?</p>
     <form method="post">
@@ -9,8 +11,6 @@
         <a style="color:black;" href="{% url 'apps.posts:categoria_list' %}">No, cancelar</a>
     </form>
 </div>
-
-{% endblock %}
-<center>
-
 </center>
+{% endblock %}
+

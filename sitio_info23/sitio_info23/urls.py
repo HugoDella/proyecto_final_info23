@@ -16,7 +16,7 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path, include
-from .views import index, pagina_404
+from .views import index, pagina_404, About
 from django.conf import settings
 from django.conf.urls.static import static
 from django.contrib.staticfiles.urls import staticfiles_urlpatterns
@@ -30,6 +30,7 @@ urlpatterns = [
     path('', include('apps.contacto.urls')),
     path('',include('apps.usuario.urls')),
     path('', include('django.contrib.auth.urls')),
+    path('',About ,name= 'Acerca de nosotros'),
     
 
 
